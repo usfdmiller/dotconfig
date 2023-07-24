@@ -1,14 +1,15 @@
 local lsp = require("lsp-zero").preset({})
 
 lsp.ensure_installed({
-	'lua_ls',
-	'gopls',
-	'tflint',
-	'terraformls',
+    'marksman',
+    'lua_ls',
+    'gopls',
+    'tflint',
+    'terraformls',
 })
 
 lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
+    lsp.default_keymaps({ buffer = bufnr })
 end)
 
 require('lspconfig').terraformls.setup({})
@@ -23,8 +24,8 @@ lsp.setup()
 local cmp = require("cmp")
 
 cmp.setup({
-	mapping = {
+    mapping = {
         -- `Enter` key to comfirm completiong
-        ['<CR>'] = cmp.mapping.confirm({select = true}),
-	}
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }
 })

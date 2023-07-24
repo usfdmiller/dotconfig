@@ -25,3 +25,9 @@ vim.keymap.set("t", "jk", "<C-\\><C-n>")
 -- Mapping commands for nvim tree
 vim.keymap.set("n", "<C-m>", "<cmd> NvimTreeFocus <CR>")
 vim.keymap.set("n", "<C-n>", "<cmd> NvimTreeToggle <CR>")
+
+vim.keymap.set("i", "'a", "à")
+vim.keymap.set("i", "'e", "è")
+vim.keymap.set("i", "'i", "ì")
+vim.keymap.set("i", "'o", "ò")
+vim.keymap.set("i", "'u", "ù")
