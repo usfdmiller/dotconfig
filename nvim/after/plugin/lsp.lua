@@ -6,6 +6,7 @@ lsp.ensure_installed({
     'gopls',
     'tflint',
     'terraformls',
+    'pylsp'
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -15,6 +16,7 @@ end)
 require('lspconfig').terraformls.setup({})
 require('lspconfig').tflint.setup({})
 require('lspconfig').gopls.setup({})
+require('lspconfig').pylsp.setup({})
 
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
