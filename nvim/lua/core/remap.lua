@@ -6,7 +6,6 @@ local opts = { noremap = true, silent = true }
 -- Move highlighted text in visual mode
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
-
 -- Cursor remains in place when appending
 keymap.set("n", "J", "mzJ`z", opts)
 -- Keep cursor centered paging up/down
@@ -33,6 +32,13 @@ keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- Better escape using jk in insert and terminal mode
 keymap.set("i", "jk", "<ESC>", opts)
 keymap.set("t", "jk", "<C-\\><C-n>", opts)
+
+-- Delete blank lines below and above
+keymap.set("n", "<M-u>", "m`:silent +g/\\m^\\s*$/d<CR>``:noh<CR>", opts)
+keymap.set("n", "<M-i>", "m`:silent -g/\\m^\\s*$/d<CR>``:noh<CR>", opts)
+-- Add blank lines below and above
+keymap.set("n", "<M-j>", ":set paste<CR>m`o<Esc>``:set nopaste<CR>", opts)
+keymap.set("n", "<M-k>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", opts)
 
 keymap.set("i", "<a", "à", opts)
 keymap.set("i", "<e", "è", opts)
