@@ -1,4 +1,8 @@
-local lsp = require("lsp-zero").preset({})
+local lsp = require("lsp-zero").preset({
+    manage_nvim_cmp = {
+        set_sources = 'recommended'
+    }
+})
 
 lsp.ensure_installed({
     'marksman',
@@ -15,7 +19,33 @@ end)
 
 require('lspconfig').terraformls.setup({})
 require('lspconfig').tflint.setup({})
-require('lspconfig').gopls.setup({})
+
+require('lspconfig').gopls.setup({
+    settings = {
+        gopls = {
+            analyses = {
+                nilness = true,
+                unusedparams = true,
+                unusedvariable = true,
+                unusedwrite = true,
+                useany = true,
+            },
+            experimentalPostfixCompletions = true,
+            gofumpt = true,
+            usePlaceholders = true,
+            hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+            }
+        }
+    }
+})
+
 require('lspconfig').pyright.setup({
     python = {
         analysis = {
