@@ -42,6 +42,8 @@ keymap.set("n", "<M-k>", ":set paste<CR>m`O<Esc>``:set nopaste<CR>", opts)
 
 keymap.set("i", "<a", "à", opts)
 keymap.set("i", "<e", "è", opts)
+keymap.set("i", ">e", "é", opts)
+keymap.set("i", "<E", "È", opts)
 keymap.set("i", "<i", "ì", opts)
 keymap.set("i", "<o", "ò", opts)
 keymap.set("i", "<u", "ù", opts)
