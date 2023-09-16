@@ -12,6 +12,8 @@ lsp.ensure_installed({
     "terraformls",
     "pylsp",
     "html",
+    "tsserver",
+    "svelte",
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -58,6 +60,10 @@ require("lspconfig").pylsp.setup({
         }
     }
 })
+
+require("lspconfig").tsserver.setup({})
+require("lspconfig").svelte.setup({})
+
 
 -- require("lspconfig").pyright.setup({
 --     python = {

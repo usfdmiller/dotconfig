@@ -16,7 +16,10 @@ return {
                 "vimdoc",
                 "query",
                 "javascript",
-                "html"
+                "tsx",
+                "svelte",
+                "html",
+                "css",
             },
             sync_install = false,
             highlight = { enable = true },

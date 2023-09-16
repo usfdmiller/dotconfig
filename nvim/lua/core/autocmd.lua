@@ -9,6 +9,13 @@ autocmd("FileType", {
     end
 })
 
+autocmd("FileType", {
+    pattern = "TelescopeResults",
+    callback = function()
+        vim.opt.foldmethod = "manual"
+    end
+})
+
 autocmd("BufWritePre", {
     pattern = "*",
     callback = function() vim.lsp.buf.format() end
