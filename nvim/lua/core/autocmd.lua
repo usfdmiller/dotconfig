@@ -10,6 +10,13 @@ autocmd("FileType", {
 })
 
 autocmd("FileType", {
+    pattern = "terraform",
+    callback = function()
+        vim.opt_local.commentstring = "# %s"
+    end
+})
+
+autocmd("FileType", {
     pattern = "TelescopeResults",
     callback = function()
         vim.opt.foldmethod = "manual"

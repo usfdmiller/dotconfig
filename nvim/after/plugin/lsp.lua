@@ -5,15 +5,16 @@ local lsp = require("lsp-zero").preset({
 })
 
 lsp.ensure_installed({
-    "marksman",
-    "lua_ls",
     "gopls",
-    "tflint",
-    "terraformls",
-    "pylsp",
     "html",
-    "tsserver",
+    "lua_ls",
+    "marksman",
+    "pylsp",
     "svelte",
+    "terraformls",
+    "tflint",
+    "tsserver",
+    "yamlls",
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -64,6 +65,22 @@ require("lspconfig").pylsp.setup({
 require("lspconfig").tsserver.setup({})
 require("lspconfig").svelte.setup({})
 
+require("lspconfig").yamlls.setup({
+    settings = {
+        validate = true,
+        completion = true,
+        yaml = {
+            schemas = {
+                ["https://json.schemastore.org/yamllint.json"] = {
+                    "/*.yaml",
+                },
+            },
+            format = {
+                enable = true
+            }
+        }
+    }
+})
 
 -- require("lspconfig").pyright.setup({
 --     python = {

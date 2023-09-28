@@ -20,6 +20,7 @@ return {
                 "svelte",
                 "html",
                 "css",
+                "yaml",
             },
             sync_install = false,
             highlight = { enable = true },
