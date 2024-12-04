@@ -1,1 +1,1 @@
-require("core")
+print("It works!")
